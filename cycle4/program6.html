@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color</title>
+</head>
+<body>
+<center>
+    <h1 style="color:black; text-align:center;"><u>Background Color changer</u></h1>
+    <form>
+ 
+        <button type="button" onclick="changecolor()" id="colorButton">changeColor</button>
+    </form>
+
+    <p id="result"></p>
+    </center>
+
+    <script>
+        function changecolor() 
+        {
+            document.body.style.backgroundColor="grey";
+            colorButton.style.backgroundColor="blue";
+            colorButton.style.color="white";
+         }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h1>Welcome to the Age Calculator</h1>
+
+    <label for="birthdate">Select your birthdate: </label>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAge()">Calculate Age</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateAge() {
+            var birthdateInput = document.getElementById("birthdate");
+            var resultElement = document.getElementById("result");
+
+            var birthdate = new Date(birthdateInput.value);
+            var currentDate = new Date();
+            var ageInMilliseconds = currentDate - birthdate;
+
+            // Calculate age in years
+            var ageInYears = Math.floor(ageInMilliseconds / (365.25 * 24 * 60 * 60 * 1000));
+
+            resultElement.textContent = "You are approximately " + ageInYears + " years old.";
+        }
+    </script>
+</body>
+</html>
+
