@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Age Calculator</title>
-</head>
 <body>
-    <h1>Welcome to the Age Calculator</h1>
-    
-    <label for="name">Enter your Name: </label>
-    <input type="text" id="name">
-   
-    <label for="birthdate">Select your birthdate: </label>
-    <input type="date" id="birthdate">
-    <button onclick="calculateAge()">Calculate Age</button>
+<center>
+<button onclick="textColor()" id="checkButton" style="color:white; background-color:#3366ff;">Set Color</button></center>
 
-    <p id="result"></p>
+<center>
+<h1 style="color:Black;"><u>JavaScript</u></h1></center>
+<p id="y">JavaScript is a dynamic programming language that's used for web development, in web applications, for game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.Many browsers use JavaScript as a scripting language for doing dynamic things on the web. Any time you see a click-to-show dropdown menu, extra content added to a page, and dynamically changing element colors on a page, to name a few features, youre seeing the effects of JavaScript.</p>
+<script>
 
-    <script>
-        function calculateAge() 
-        {
-            var nameInput = document.getElementById("name");
-            var birthdateInput = document.getElementById("birthdate");
-            var resultElement = document.getElementById("result");
-            result.style.color="Green";
-            var birthdate = new Date(birthdateInput.value);
-            var currentDate = new Date();
-            var ageInMilliseconds = currentDate - birthdate;
+function textColor()
+{
+checkButton.style.color="white";
+checkButton.style.backgroundColor="#3366ff";
+var tcolor=prompt("Enter a color");
+if (tcolor !== null)
+{
+    var paragraphs = document.getElementsByTagName("p");
 
-            // Calculate age in years
-            var ageInYears = Math.floor(ageInMilliseconds / (365.25 * 24 * 60 * 60 * 1000));
-
-            resultElement.textContent = "Hi" + nameInput;
-            resultElement.textContent = "Age is " + ageInYears;
-        }
-    </script>
+    for (var i = 0; i < paragraphs.length; i++) 
+	{
+        paragraphs[i].style.color = tcolor;
+	}
+   }
+}
+</script>
 </body>
-</html>
-
+<html>
