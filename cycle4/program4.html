@@ -1,39 +1,29 @@
-<!DOCTYPE html>
+<!--4.write a javascript program to check whether a number is positive or negative?
+Merin Magi Telson
+11/01/23-->
 <html>
 <head>
-    <title>Positive or Negative Number Checker</title>
+<script>
+function myfunction()
+{
+	var x=document.getElementById("string").value;
+	document.getElementById("sample2").innerHTML = x;
+}
+</script>
 </head>
 <body>
+<h1 style="color:green; text-align:center;"><u>Check if Positive or negative</u></h1>
 <center>
-    <h1 style="color:green; text-align:center;"><u>Check if Positive or Negative</u></h1>
-    <form>
-        <label for="number">Enter any number:</label>
-        <input type="number" id="number" name="number" placeholder="Enter a number" required>
-        <button type="button" onclick="checkNumber()">Check</button>
-    </form>
 
-    <p id="result"></p>
-    </center>
+<label>Enter any number:</label>
+<input type="int" id="num">
+<br><br>
+<label>Enter the value of second number:</label>
+<input type="int" id="num2">
+<br>
+<button onclick="Addition()">Sum</button>
 
-    <script>
-        function checkNumber() 
-        {
-            var numberInput = document.getElementById("number");
-            var resultElement = document.getElementById("result");
-            var number = parseFloat(numberInput.value);
-            //isNaN-returns true when the number is Not a Number
-            if (isNaN(number)) {
-                resultElement.innerText = "Please enter a valid number.";
-            } else if (number > 0) {
-                resultElement.innerText = "The number is positive.";
-            } else if (number < 0) {
-                resultElement.innerText = "The number is negative.";
-            } else {
-                resultElement.innerText = "The number is zero.";
-            }
-        }
-    </script>
-    
+</center>
+<p id="sum"></p>
 </body>
 </html>
-
