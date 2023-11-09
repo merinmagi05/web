@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Year Calendar with Centered Month Names</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        th, td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+            text-align: center; /* Center the month names */
+        }
+    </style>
+</head>
+<body>
+    <h1>Year Calendar with Centered Month Names</h1>
+
+    <label for="yearInput">Enter a Year:</label>
+    <input type="number" id="yearInput" min="1900">
+    
+    <button onclick="generateYearCalendar()">Generate Year Calendar</button>
+
+    <div id="yearCalendar"></div>
+
+    <script>
+        function generateYearCalendar() {
+            var yearInput = document.getElementById("yearInput");
+            var yearCalendarDiv = document.getElementById("yearCalendar");
+            
+            var year = parseInt(yearInput.value);
+
+            if (isNaN(year)) {
+                alert("Please enter a valid year.");
+                return;
+            }
+
+            // Clear previous year calendar, if any
+            yearCalendarDiv.innerHTML = "";
+
+            var months = [
+                "January", "February", "March", "April",
+                "May", "June", "July", "August",
+                "September", "October", "November", "December"
+            ];
+
+            var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            for (var month = 0; month < 12; month++) {
+                var table = document.createElement("table");
+                var monthName = months[month];
+
+                // Create a row for the month name
+                var monthRow = table.insertRow();
+                var monthCell = monthRow.insertCell();
+                monthCell.textContent = monthName;
+                monthCell.colSpan = 7;
+                monthCell.style.backgroundColor = "#333";
+                monthCell.style.color = "#fff";
+                monthCell.style.textAlign = "center"; // Center the month name
+
+                // Create a row for day names
+                var dayNamesRow = table.insertRow();
+                for (var i = 0; i < 7; i++) {
+                    var dayNameCell = dayNamesRow.insertCell();
+                    dayNameCell.textContent = daysOfWeek[i];
+                    dayNameCell.style.backgroundColor = "#333";
+                    dayNameCell.style.color = "#fff";
+                }
+
+                var date = new Date(year, month, 1);
+                var daysInMonth = new Date(year, month + 1, 0).getDate();
+                var firstDay = date.getDay();
+
+                var currentDay = 1;
+                for (var i = 0; i < 6; i++) {
+                    var row = table.insertRow();
+                    for (var j = 0; j < 7; j++) {
+                        var cell = row.insertCell();
+                        if (i === 0 && j < firstDay) {
+                            cell.textContent = "";
+                        } else if (currentDay <= daysInMonth) {
+                            cell.textContent = currentDay;
+                            currentDay++;
+                        }
+                    }
+                }
+
+                yearCalendarDiv.appendChild(table);
+            }
+        }
+    </script>
+</body>
+</html>

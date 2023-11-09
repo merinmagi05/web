@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color</title>
+</head>
+<body onmouseover="mouseover()" onmouseout="mouseOut()">
+<div>
+<center>
+    <h1 id="heading" style="color:black; text-align:center;" ><u>Change the color of background by just clicking the button</u></h1>
+    
+ 
+    <button type="button" onclick="changecolor()" id="colorButton"  onmouseout="mouseOut1()" onmouseover="mouseover1()">setColor</button>
+ 
+
+    <p id="result"></p>
+    </center>
+</div>
+    <script>
+		function mouseover()
+		{
+			document.body.style.backgroundColor="#900C3F";
+			
+		}
+		function mouseOut()
+		{
+			document.body.style.backgroundColor="#10A9E0";
+            
+		}
+		
+		function mouseover1()
+		{
+			document.getElementById("colorButton").style.color = "white";
+			document.getElementById("colorButton").style.backgroundColor = "grey";
+		}
+		
+		function mouseOut1()
+		{
+			document.body.style.backgroundColor="red";
+            colorButton.style.backgroundColor="white";
+            colorButton.style.color="black";
+		}
+        function changecolor() 
+        {
+			var heading = document.getElementById("heading");
+            heading.style.color = "white";
+            colorButton.style.backgroundColor="grey";
+            colorButton.style.color="black";
+         }
+    </script>
+    
+</body>
+</html>

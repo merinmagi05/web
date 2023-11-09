@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color</title>
+</head>
+<body>
+<center>
+    <h1 id="heading" style="color:black; text-align:center;"><u>Change the color of background by just clicking the button</u></h1>
+    
+ 
+    <button type="button" onclick="changecolor()" id="colorButton">setColor</button>
+ 
+
+    <p id="result"></p>
+    </center>
+
+    <script>
+        function changecolor() 
+        {
+			var heading = document.getElementById("heading");
+            heading.style.color = "white";
+            document.body.style.backgroundColor="red";
+            colorButton.style.backgroundColor="yellow";
+            colorButton.style.color="black";
+         }
+    </script>
+    
+</body>
+</html>
