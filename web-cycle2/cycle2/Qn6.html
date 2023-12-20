@@ -1,0 +1,127 @@
+<!--6. Create the following Html Page using appropriate form controls
+Merin Magi Telson
+30/09/23-->
+<html>
+<head>
+<title>Form</title>
+<style>
+body{
+background-color:yellow;
+
+}
+ input[type="radio"] 
+ {
+            border-radius: 50%;
+            width: 15px;
+            height: 20px;
+  }
+
+.left-column,.right-column
+{
+float:left;
+width:50%;
+
+
+}
+
+
+.clear {
+            clear: both;
+        }
+		
+.left-column.scrollbar{
+width: 300px;
+            overflow-x: auto;
+            direction: rtl;
+            border: 1px solid #ccc;
+            padding: 10px;
+}
+
+</style>
+</head>
+<body>
+<center>
+<h1 style="background-color:#FDDA0D;">The World of fruits</h1>
+<h2>Fruit Survey</h2>
+<form>
+<div class="left-column">
+	<div>
+		<label for="name">Name:  </label>
+	</div>
+	<br>
+	<div>
+		<label for="address">Address:</label>
+		
+	</div>
+	<br>
+	<div>
+		<label for="email">Email:  </label>
+		
+	</div>
+	<br>
+	<br>
+	<div>
+	<p> How many pieces of fruit do you eat per day?</p>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="s">
+	<p>My favourite fruit</p>
+	</div>
+	<br>
+	<br>
+	
+	<p>Would you like a brochure</p>
+</div>
+</center>
+
+<div class="right-column">
+	<div>
+		<input type="text" id="name" name="name">
+	</div>
+	<br>
+	<div>
+		<input type="text" id="address" name="address">
+	</div>
+	<br>
+	
+		<input type="text" id="email" name="email">
+	
+	<br>
+	<br>
+	<div>
+		<label><input type="radio" name="shape" value="circle"> 0</label>
+		<br>
+		<label><input type="radio" name="shape" value="square"> 1</label>
+		<br>
+		<label><input type="radio" name="shape" value="triangle"> 2</label>
+		<br>
+		<label><input type="radio" name="shape" value="triangle">more than 2</label><br>
+	</div>
+	<br><br>
+	<div>
+	<select name="fruits" id="fruits" size="3">
+		<option value="apple">apple</option>
+		<option value="Banana">Banana</option>
+		<option value="plum">plum</option>
+		<option value="pomegranate">pomegranate</option>
+		<option value="guava">guava</option>
+		<option value="Blueberry">Blueberry</option>
+	</select>
+	<br><br><br>
+	<input type="checkbox">
+	</div>
+</div>
+<br>
+<br>
+</div>
+<br>
+ <input type="submit" value="Submit">
+ <br><br>
+</form>
+</body>
+</html>
+
